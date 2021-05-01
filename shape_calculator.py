@@ -33,7 +33,21 @@ class Rectangle:
     def __repr__(self):
         return f"Rectangle(width={self.width}, height={self.height})"
 
-class Square:
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
 
-    def __init__(self):
-        super().__init__()
+    def set_side(self, side):
+        super().set_height(side)
+        super().set_width(side)
+
+    def set_height(self, height):
+        super().set_height(height)
+        super().set_width(height)
+    
+    def set_width(self, width):
+        super().set_width(width)
+        super().set_height(width)
+
+    def __repr__(self):
+        return f"Square(side={self.width})"
