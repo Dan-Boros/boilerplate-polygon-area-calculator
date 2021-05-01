@@ -8,15 +8,13 @@ class Rectangle:
     def width(self):
         return self._width
 
-    @width.setter
-    def set_width(self, value):
-        self._width = value
-
     @property
     def height(self):
         return self._height
+
+    def set_width(self, value):
+        self._width = value
     
-    @height.setter
     def set_height(self, value):
         self._height = value
     
@@ -37,10 +35,10 @@ class Rectangle:
         if self.height > 50 or self.width > 50:
             return "Too big for picture."
         
-        oneLine = "*" * self.width
+        oneLine = "*" * self.width + "\n"
         allLines = [oneLine for _ in range(0, self.height)]
 
-        return "\n".join(allLines)
+        return "".join(allLines)
 
     def get_amount_inside(self, other):
         # Takes another shape (square or rectangle) as an argument.
